@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea {
+            width: 100%;
+            height: 100px;
+        }
+
+        .formulario {
+            
+            width: 50%;
+            margin: auto;
+            padding: 10px;
+        }
+
+        .datos_personales {
+            background-color: green;
+        }
+
+        .interes {
+            background-color: cadetblue;
+        }
+
+        .competencias {
+            background-color: purple;
+        }
+
+        legend {
+            background-color: white;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="formulario">
+        <form>
+            <fieldset class="datos_personales">
+                <legend>Datos Personales</legend>
+                <label>Apellidos:</label>
+                <input type="text" placeholder="Insertar apellidos">
+                <label>Nombre:</label>
+                <input type="text" placeholder="Insertar nombre">
+                <label>Email:</label>
+                <input type="email" placeholder="Correo electrónico"><br><br>
+
+                <label>Teléfono:</label>
+                <input type="tel" placeholder="Nº de contacto">
+
+                <label>DNI:</label>
+                <input type="text" placeholder="Nº de documento">
+
+                <label>Fecha de Nacimiento:</label>
+                <input type="date"><br><br>
+
+                <label>Provincia:</label>
+                <select>
+                    <option>-- Selecciona --</option>
+                    <option>Toledo</option>
+                    <option>Madrid</option>
+                    <option>Bilbao</option>
+                </select>
+
+                <label>Sexo:</label>
+                <input type="radio" name="sexo"> Hombre
+                <input type="radio" name="sexo"> Mujer<br><br>
+
+                <label>Dispositivos Preferidos:</label>
+                <input type="checkbox"> PC
+                <input type="checkbox"> Tableta
+                <input type="checkbox"> Móvil<br>
+
+                <label>IDE Preferido:</label>
+                <input type="text">
+            </fieldset>
+
+            <fieldset class="interes">
+                <legend>Otros datos de interés</legend>
+                <textarea placeholder="Indica cualquier otra información que consideres relevante"></textarea>
+            </fieldset>
+
+            <fieldset class="competencias">
+                <legend>Competencias de Programación:</legend>
+                <label>Nivel de Java:</label>
+                <input type="range" min="0" max="10">
+
+                <label>Nivel de HTML:</label>
+                <input type="range" min="0" max="10"><br>
+
+                <label>Nivel de Python:</label>
+                <input type="range" min="0" max="10">
+
+                <label>Nivel de CSS:</label>
+                <input type="range" min="0" max="10">
+            </fieldset>
+
+            <div class="botones">
+                <input type="button" value="Activado">
+                <input type="reset" value="Borrar Datos">
+                <input type="submit" value="Enviar Solicitud">
+                <input type="button" value="Desactivado" disabled>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
