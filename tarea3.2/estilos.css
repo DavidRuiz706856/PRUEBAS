@@ -1,24 +1,18 @@
-
-
-/* estilos de la primera tabla*/
+/* estilos de la primera tabla */
 /* cambia el color de fondo de la primera celda de cada fila */
 tr > td:first-child {
   background-color: green;
 }
-
 
 /* cambia el color de fondo de las celdas que ocupan 5 columnas */
 th[colspan="5"] {
   background-color: yellow;
 }
 
-
-/* cambia el tamaño de la primera letra de los encabezados de la primera tabla solo 
-y solo del primer tr*/
+/* cambia el tamaño de la primera letra de los encabezados de la primera tabla solo y solo del primer tr */
 table:first-of-type tr:first-of-type th::first-letter {
   font-size: 2em;
 }
-
 
 /* añade un borde a la tabla, las filas y las celdas */
 table, th, td {
@@ -26,52 +20,53 @@ table, th, td {
   border-collapse: collapse;
 }
 
-
-/* estilos de la segunda tabla*/
-/* cambia los estilos del primer th de cada tr menos el primer th*/
+/* estilos de la segunda tabla */
+/* cambia los estilos del primer th de cada tr menos el primer th */
 table:nth-of-type(2) tr:nth-child(n+1):not(:last-child) th:first-child {
-    background-color: red;
+  background-color: red;
 }
 
+/* cambia el color de fondo de los td del primer tr */
 table:nth-of-type(2) tr:nth-child(1) td {
-    background-color: grey;
+  background-color: grey;
 }
 
+/* cambia el color de fondo de los th del primer tr excepto el primero */
 table:nth-of-type(2) tr:first-child th:not(:first-child) {
-    background-color:blue; 
+  background-color: blue;
 }
 
-table:nth-of-type(2) li{
-    color: red;
+/* cambia el color del texto de los elementos li dentro de la segunda tabla */
+table:nth-of-type(2) li {
+  color: red;
 }
 
+/* cambia el color de fondo del último td de cada fila */
 table:nth-of-type(2) td:last-child {
-    background-color: blue;
+  background-color: blue;
 }
 
+/* cambia el color de fondo de los th excepto el primero, excepto en el segundo tr */
 table:nth-of-type(2) tr:not(:nth-child(2)) th:not(:first-child) {
-    background-color: blue;
+  background-color: blue;
 }
 
+/* cambia el color de fondo del último th de cada fila */
 table:nth-of-type(2) th:last-child {
-    background-color: blue;
+  background-color: blue;
 }
 
+/* cambia el color de fondo y la altura del último th del cuarto tr */
 table:nth-of-type(2) tr:nth-child(4) th:last-child {
-  /* Tus estilos van aquí */
-  background-color:yellow; 
+  background-color: yellow;
   height: 5em;
 }
 
+/* cambia el tamaño de las imágenes */
 img {
-    width: 50px;
-    height: 50px;
+  width: 50px;
+  height: 50px;
 }
-
-
-
-
-
 
 
 
