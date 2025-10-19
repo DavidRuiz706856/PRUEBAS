@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maquetación Web</title>
+  <link rel="stylesheet" href="/tarea4.2/css/estilos.css">
+</head>
+<body>
+
+  <header class="encabezado">
+    <h1 class="logo">Logo</h1>
+    <nav class="menu">
+      <a href="#">Inicio</a>
+      <a href="#">Servicios</a>
+      <a href="#">Proyectos</a>
+      <a href="#">Contacto</a>
+    </nav>
+    <div class="botones">
+      <button>Claro</button>
+      <button class="oscuro">Oscuro</button>
+    </div>
+  </header>
+
+  <section class="seccion-inline-block">
+    <div class="tarjeta">inline-block</div>
+    <div class="tarjeta">inline-block</div>
+    <div class="tarjeta">inline-block</div>
+  </section>
+
+  <section class="seccion-inline">
+    <span>inline</span>
+    <span>inline</span>
+    <span>inline</span>
+  </section>
+
+  <section class="seccion-bloques">
+    <div class="bloque">
+      <p>bloque</p>
+      <select><option>Opción</option></select>
+      <div class="imagen"></div>
+    </div>
+    <div class="bloque">
+      <p>bloque</p>
+      <select><option>Opción</option></select>
+      <div class="imagen"></div>
+    </div>
+  </section>
+
+  <section class="seccion-layout">
+    <h2>Layouts</h2>
+    <div class="fijo">Layout fijo (800px)</div>
+    <div class="elastico">Layout elástico (60em)</div>
+    <div class="fluido">Layout fluido (100%)</div>
+    <div class="hibrido">Layout híbrido (80% máx. 1200px)</div>
+  </section>
+
+  <section class="seccion-box">
+    <h2>Box-sizing</h2>
+    <div class="caja content-box">content-box</div>
+    <div class="caja border-box">border-box</div>
+  </section>
+
+  <section class="seccion-centrado">
+    <h2>Centrado</h2>
+    <div class="centro-inline"><span>Horizontal Inline</span></div>
+    <div class="centro-bloque"><div>Horizontal Bloque</div></div>
+    <div class="vertical-inline"><p>Vertical Inline</p></div>
+    <div class="vertical-bloque"><div>Vertical Bloque</div></div>
+  </section>
+
+  <section class="seccion-posicion">
+    <h2>Posicionamiento</h2>
+    <div class="estatico">static</div>
+    <div class="relativo">relative</div>
+    <br><br>
+    <div class="fijo-pos">fixed</div>
+    <div class="contenedor-abs">
+      <div class="absoluto">absolute</div>
+    </div>
+    <div class="pegajoso">sticky</div>
+  </section>
+
+  <section class="seccion-columnas">
+    <h2>Columnas</h2>
+    <article>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut...
+    </article>
+  </section>
+
+  <section class="seccion-flotantes clearfix">
+    <h2>Flotantes</h2>
+    <img src="img/coche1.jpeg" class="izquierda" alt="izquierda">
+    <img src="img/coche1.jpeg" class="derecha" alt="derecha">
+    <p>
+      Este texto rodea las imágenes flotantes a la izquierda y derecha.
+    </p>
+  </section>
+
+  <footer class="pie">
+    Pie de página
+  </footer>
+
+</body>
+</html>
