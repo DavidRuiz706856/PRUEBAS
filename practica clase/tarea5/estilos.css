@@ -1,0 +1,49 @@
+
+.cabecera{
+    background-color: grey;
+    color: white;
+    padding: 10px;
+    font-size: 10px;
+}
+
+.links{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr ;
+    padding: 0;
+    margin: 0;
+    background-color: lightgrey;
+    justify-content: space-around;
+    
+}
+
+img{
+    width: 100px;
+    height: 100%;
+    display: block;
+    border-right: 3px solid black;
+}
+
+.texto {
+    flex: 1;
+}
+
+
+.h1{
+    background-color: grey;
+    padding: 0;
+    margin: 0;
+    border-bottom: 3px solid black;
+}
+p{
+    padding: 0;
+
+}
+.seccion{
+    display: flex;
+    margin: 5px;
+    background-color: white;
+    text-align: center;
+    border: 3px solid black;
+}
+
+
