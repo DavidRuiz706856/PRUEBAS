@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastFood</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        .logo {
+            height: 8em;
+            margin-left: 3em;
+        }
+
+        .encabezado {
+            display: flex;
+            justify-content: space-between;
+            background-color: black;
+        }
+
+        .menu {
+            margin: auto;
+            margin-right: 0%;
+            padding: 3em;
+        }
+
+        .menu a {
+            color: white;
+            list-style: none;
+            padding-left: 2em;
+            text-decoration: none;
+        }
+
+        .inicio {
+            position: relative;
+        }
+
+        .inicio img {
+            width: 100vw;
+            height: 95vh;
+            object-fit: cover;
+        }
+
+        .textoimg {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: auto;
+            align-items: center;
+            color: white;
+            font-size: 3em;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            width: 90%;
+        }
+
+        .botonimg {
+            padding: 14px 30px;
+            border-radius: 50px;
+            background-color: black;
+            color: white;
+            font-size: 1em;
+            font-weight: bold;
+            box-shadow: 0 6px 10px white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .botonimg:hover {
+            background-color: white;
+            color: black;
+            border-color: black;
+            box-shadow: 0 6px 10px black;
+        }
+
+        .mejoreshamburguesas {
+            padding: 60px 20px;
+            background-color: black;
+            text-align: center;
+        }
+
+        .mejoreshamburguesas h2 {
+            font-size: 3em;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .hamburguesas {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .hamburguesa {
+            background-color: rgb(47, 47, 47);
+            border-radius: 12px;
+            padding-bottom: 20px;
+            min-width: 250px;
+            max-width: 100%;
+            flex: 1 1 250px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburguesa:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px grey;
+            background-color: white;
+            color: black;
+        }
+
+        .hamburguesa img {
+            width: 100%;
+            height: 200px;
+            display: block;
+            object-fit: cover;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            margin-bottom: 15px;
+        }
+
+        .hamburguesa h3 {
+            color: white;
+            margin-bottom: 5px;
+            transition: color 0.3s ease;
+        }
+
+        .hamburguesa:hover h3 {
+            color: black;
+        }
+
+        .hamburguesa .precio {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: white;
+            display: block;
+            margin-top: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .hamburguesa:hover .precio {
+            color: black;
+        }
+
+        .nosotros {
+            background-color: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .nosotros h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .nosotros p {
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+
+        @media (max-width: 768px) {
+            .logo {
+                height: 5em;
+                margin-left: 1.5em;
+            }
+
+            .encabezado {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .menu {
+                margin: 0;
+                padding: 1.5em;
+                text-align: center;
+            }
+
+            .menu a {
+                padding-left: 1em;
+                padding-right: 1em;
+                font-size: 0.9em;
+            }
+
+            .textoimg {
+                font-size: 2em;
+                top: 50%;
+            }
+
+            .botonimg {
+                padding: 12px 25px;
+                font-size: 0.9em;
+            }
+
+            .mejoreshamburguesas h2 {
+                font-size: 2.5em;
+            }
+
+            .hamburguesas {
+                gap: 15px;
+            }
+
+            .hamburguesa {
+                flex: 1 1 calc(50% - 15px);
+                min-width: 200px;
+            }
+
+            .nosotros h2 {
+                font-size: 1.8rem;
+            }
+
+            .nosotros p {
+                font-size: 1rem;
+            }
+        }
+        
+
+        @media (max-width: 480px) {
+            .logo {
+                height: 4em;
+                margin-left: 1em;
+            }
+
+            .menu {
+                padding: 1em;
+            }
+
+            .menu a {
+                display: block;
+                padding: 0.5em 0;
+                font-size: 0.85em;
+            }
+
+            .inicio img {
+                height: 60vh;
+            }
+
+            .textoimg {
+                font-size: 1.2em;
+                top: 50%;
+                width: 95%;
+            }
+
+            .textoimg h2 {
+                margin-bottom: 20px;
+            }
+
+            .botonimg {
+                padding: 10px 20px;
+                font-size: 0.8em;
+            }
+
+            .mejoreshamburguesas {
+                padding: 40px 15px;
+            }
+
+            .mejoreshamburguesas h2 {
+                font-size: 2em;
+                margin-bottom: 30px;
+            }
+
+            .hamburguesas {
+                gap: 15px;
+            }
+
+            .hamburguesa {
+                flex: 1 1 100%;
+                min-width: auto;
+                max-width: 350px;
+                margin: 0 auto;
+            }
+
+            .nosotros {
+                padding: 30px 15px;
+            }
+
+            .nosotros h2 {
+                font-size: 1.5rem;
+            }
+
+            .nosotros p {
+                font-size: 0.95rem;
+                padding: 0 10px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .logo {
+                height: 3.5em;
+                margin-left: 0.5em;
+            }
+
+            .textoimg {
+                font-size: 1em;
+            }
+
+            .mejoreshamburguesas h2 {
+                font-size: 1.5em;
+            }
+
+            .hamburguesa img {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="encabezado">
+        <a href="index.html"><img class="logo" src="https://i.ibb.co/5xrms6C4/logo.png" alt=""></a>
+        <nav class="menu">
+            <a href="">Inicio</a>
+            <a href="">Carta</a>
+            <a href="">Nosotros</a>
+            <a href="">Contacto</a>
+        </nav>
+    </header>
+
+
+    <div class="inicio">
+        <img src="https://i.ibb.co/Gv2B7KgJ/hamburguesa1.jpg" alt="">
+        <div class="textoimg">
+            <h2>HAZ TU PEDIDO Y DISFRUTA SIN MOVERTE DE CASA</h2>
+            <button type="button" class="botonimg">IR A LA CARTA</button>
+        </div>
+
+    </div>
+
+    <div class="mejoreshamburguesas">
+        <h2>BESTSELLERS</h2>
+        <div class="hamburguesas">
+            <div class="hamburguesa">
+                <img src="https://i.ibb.co/RpKxCXCM/ham4.png" alt="">
+                <h3>El Devorador</h3>
+                <span class="precio">€9.99</span>
+            </div>
+
+            <div class="hamburguesa">
+                <img src="https://i.ibb.co/xSQKtFkF/ham3.png" alt="">
+                <h3>La Bestia</h3>
+                <span class="precio">€7.50</span>
+            </div>
+
+            <div class="hamburguesa">
+                <img src="https://i.ibb.co/MyfVygqC/ham1.png" alt="">
+                <h3>O Rei</h3>
+                <span class="precio">€6.00</span>
+            </div>
+
+            <div class="hamburguesa">
+                <img src="https://i.ibb.co/q32jMHJZ/ham2.png" alt="">
+                <h3>El Magnífico</h3>
+                <span class="precio">€10.50</span>
+            </div>
+
+        </div>
+    </div>
+
+    <section id="nosotros" class="nosotros">
+        <h2>Sobre Nosotros</h2>
+        <p>Somos un restaurante apasionado por la buena comida. Servimos platos frescos y sabrosos desde 2010, ahora
+            también a domicilio.</p>
+    </section>
+</body>
+
+</html>
