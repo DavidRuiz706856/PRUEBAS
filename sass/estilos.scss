@@ -1,0 +1,190 @@
+
+//variables y mapas
+
+/// ancho máximo del contenedor
+/// @type number
+/// @group layout
+$ancho-maximo: 1200px;
+
+/// ancho del contenedor
+/// @type number
+/// @group layout
+$ancho-contenedor: 90%;
+
+/// padding general
+/// @type number
+/// @group espaciado
+$padding-contenedor: 20px;
+
+/// breakpoint tablet
+/// @type number
+/// @group responsive
+$breakpoint-tablet: 768px;
+
+/// mapa de colores base
+/// @type map
+/// @group colores
+$colores-base: (
+  fondo: white,
+  menu: lightgrey,
+  azul: dodgerblue,
+  rojo: red,
+  verde: lightgreen,
+  negro: black
+);
+
+
+/// lista de tamaños de borde para probar while
+/// @type list
+/// @group bordes
+$lista-radios: 5px, 10px, 15px;
+
+
+
+//función de usuario
+
+
+/// devuelve un color del mapa, y avisa si no existe
+/// @param {string} $clave - clave del color
+/// @param {color} $default - color por defecto
+/// @return {color}
+/// @group funciones
+@function color-seguro($clave, $default: black) {
+  @if map-has-key($colores-base, $clave) {
+    @return map-get($colores-base, $clave);
+  } @else {
+    @warn "el color '#{$clave}' no existe, uso el color por defecto";
+    @return $default;
+  }
+}
+
+
+
+// mixin
+
+
+/// mixin simple para borde redondeado
+/// @param {number} $radio - radio del borde
+/// @group mixins
+@mixin borde-redondeado($radio) {
+  @if $radio < 0 {
+    @error "el radio no puede ser negativo";
+  }
+
+  @debug "aplicando borde redondeado de #{$radio}";
+  border-radius: $radio;
+}
+
+
+
+// reset básico
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: arial, sans-serif;
+  background-color: color-seguro(fondo, white);
+}
+
+.container {
+  width: $ancho-contenedor;
+  max-width: $ancho-maximo;
+  margin: 0 auto;
+  padding: $padding-contenedor;
+}
+
+
+
+// ejemplo de FOR
+
+
+nav {
+  background-color: color-seguro(menu, lightgrey);
+  padding: 10px 20px;
+  @include borde-redondeado(8px);
+
+  ul {
+    list-style: none;
+    display: flex;
+
+    li {
+      margin-right: 20px;
+
+      a {
+        text-decoration: none;
+      }
+
+      // un for sencillo que pinta de azul los 3 primeros enlaces
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) a {
+          color: color-seguro(azul, blue);
+        }
+      }
+    }
+  }
+}
+
+
+
+// ejemplo de EACH
+
+
+$estados-botones: error, ok; // solo para el ejemplo
+
+.boton {
+  padding: 6px 12px;
+  border: 1px solid color-seguro(negro, black);
+  cursor: pointer;
+
+  @each $estado in $estados-botones {
+    &.#{$estado} {
+      @if $estado == error {
+        background-color: color-seguro(rojo, red);
+        color: white;
+      } @else {
+        background-color: color-seguro(verde, green);
+        color: color-seguro(negro, black);
+      }
+    }
+  }
+}
+
+
+// ejemplo de WHILE
+// creo clases de prueba .box-1, .box-2, .box-3 con radios distintos
+$index: 1;
+
+@while $index <= length($lista-radios) {
+  $radio-actual: nth($lista-radios, $index);
+
+  .box-#{$index} {
+    width: 100px;
+    height: 100px;
+    background-color: color-seguro(azul, blue);
+    @include borde-redondeado($radio-actual);
+    margin-bottom: 10px;
+  }
+
+  $index: $index + 1;
+}
+
+// responsive (usa if/else de forma sencilla)
+
+@media (max-width: $breakpoint-tablet) {
+  .container {
+    // ejemplo tonto de if/else dentro de un media
+    $usar-fondo-oscuro: false;
+
+    @if $usar-fondo-oscuro == true {
+      background-color: color-seguro(negro, black);
+      color: white;
+    } @else {
+      background-color: color-seguro(fondo, white);
+      color: color-seguro(negro, black);
+    }
+  }
+}
