@@ -5,215 +5,208 @@
 }
 
 body {
-  font-family: arial, sans-serif;
-  background-color: white;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
 }
 
 .container {
-  width: 90%;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px;
 }
 
 nav {
-  background-color: lightgrey;
-  border-radius: 8px;
-  padding: 12px 20px;
-  margin-bottom: 30px;
+  background-color: #8bc34a;
+  padding: 20px 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 nav ul {
   list-style: none;
   display: flex;
-}
-nav ul li {
-  margin-right: 25px;
+  gap: 20px;
 }
 nav ul li a {
+  color: #333;
   text-decoration: none;
+  font-weight: 500;
   cursor: pointer;
 }
-nav ul li:nth-child(1) a {
-  color: red;
-}
-nav ul li:nth-child(2) a {
-  color: teal;
-}
-nav ul li:nth-child(3) a {
-  color: blue;
-}
-nav ul li:nth-child(4) a {
-  color: orange;
+nav ul li a:hover {
+  color: #555;
 }
 nav ul li.active a {
+  color: rgb(60.1659751037, 87.1203319502, 28.8796680498);
   font-weight: bold;
 }
-nav .zona-botones {
+
+.zona-botones {
   display: flex;
-  gap: 8px;
-  margin-right: 15px;
+  gap: 10px;
 }
-nav .zona-botones .boton-estado {
-  padding: 6px 14px;
-  border-radius: 6px;
-  border: 1px solid black;
-  font-size: 13px;
+
+.boton-estado.error {
+  background-color: #f44336;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
   cursor: pointer;
-  font-weight: 500;
 }
-nav .zona-botones .boton-estado.error {
-  background-color: red;
-  color: white;
+.boton-estado.error:hover {
+  opacity: 0.8;
 }
-nav .zona-botones .boton-estado.aviso {
-  background-color: khaki;
+
+.boton-estado.aviso {
+  background-color: #ffc107;
   color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
 }
-nav .zona-botones .boton-estado.aceptado {
-  background-color: lightgreen;
-  color: black;
+.boton-estado.aviso:hover {
+  opacity: 0.8;
 }
-nav .zona-botones .boton-estado.normal {
-  background-color: dodgerblue;
+
+.boton-estado.aceptado {
+  background-color: #4caf50;
   color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.boton-estado.aceptado:hover {
+  opacity: 0.8;
+}
+
+.boton-estado.normal {
+  background-color: #2196f3;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.boton-estado.normal:hover {
+  opacity: 0.8;
 }
 
 .card {
-  width: 46%;
-  display: inline-block;
-  vertical-align: top;
-  margin-bottom: 30px;
-  padding: 18px;
-  border-radius: 20px;
-  border: 3px solid grey;
-}
-.card:nth-child(odd) {
-  margin-right: 6%;
+  border-radius: 15px;
+  padding: 20px;
+  width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .card img {
   width: 100%;
-  height: 150px;
+  height: 180px;
   object-fit: cover;
-  border-radius: 25px;
+  border-radius: 10px;
   margin-bottom: 15px;
 }
 .card figcaption {
-  text-align: center;
   font-weight: bold;
   font-size: 16px;
-  padding: 8px 20px 8px 50px;
-  border-radius: 30px;
-  display: inline-block;
-  margin-left: 50%;
-  transform: translateX(-50%);
   margin-bottom: 15px;
-  border: 2px solid black;
-  position: relative;
-}
-.card figcaption .bandera {
-  display: inline-block;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  position: absolute;
-  left: 0px;
-  top: 50%;
-  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  border: 2px solid #333;
+  border-radius: 25px;
+  padding-right: 15px;
+  overflow: hidden;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 .card p {
   font-size: 14px;
-  line-height: 1.5;
-  color: black;
+  line-height: 1.6;
+  color: #333;
 }
 
 .tarjeta-verde {
-  background-color: lightgreen;
+  background-color: #c8e6c9;
+  border: 3px solid rgb(164.9375, 214.0625, 166.575);
 }
 
 .tarjeta-azul {
-  background-color: dodgerblue;
+  background-color: #64b5f6;
+  border: 3px solid rgb(51.7987804878, 157.987804878, 243.2012195122);
 }
 
 .tarjeta-amarilla {
-  background-color: khaki;
+  background-color: #fff59d;
+  border: 3px solid rgb(255, 239.7959183673, 106);
 }
 
 .tarjeta-rosa {
-  background-color: pink;
+  background-color: #f8bbd0;
+  border: 3px solid rgb(243.24, 140.76, 176.04);
 }
 
 .bandera {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: block;
+  flex-shrink: 0;
   background-size: cover;
   background-position: center;
-  border: 1px solid black;
-}
-.bandera.espana {
-  background-image: url("img/es.jpg");
-}
-.bandera.italia {
-  background-image: url("img/it.jpg");
-}
-.bandera.francia {
-  background-image: url("img/fr.jpg");
-}
-.bandera.alemania {
-  background-image: url("img/al.jpg");
 }
 
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    gap: 15px;
-  }
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-  nav ul li {
-    margin-right: 0;
-  }
-  nav .zona-botones {
-    margin-right: 0;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .card {
-    width: 100%;
-    margin-right: 0 !important;
-  }
+.bandera.italia {
+  background-image: url("./img/it.jpg");
 }
-@media (max-width: 480px) {
-  .container {
-    width: 95%;
-    padding: 10px;
-  }
-  nav {
-    padding: 10px;
-  }
-  nav .zona-botones .boton-estado {
-    padding: 5px 10px;
-    font-size: 11px;
-  }
-  .card {
-    padding: 15px;
-  }
-  .card img {
-    height: 120px;
-  }
-  .card figcaption {
-    font-size: 14px;
-    padding: 6px 15px 6px 45px;
-  }
-  .card figcaption .bandera {
-    width: 30px;
-    height: 30px;
-  }
-  .card p {
-    font-size: 13px;
-  }
+
+.bandera.francia {
+  background-image: url("./img/fr.jpg");
+}
+
+.bandera.espana {
+  background-image: url("./img/es.jpg");
+}
+
+.bandera.alemania {
+  background-image: url("./img/al.jpg");
+}
+
+.margen-5 {
+  margin: 5px;
+}
+
+.margen-10 {
+  margin: 10px;
+}
+
+.margen-15 {
+  margin: 15px;
+}
+
+.margen-20 {
+  margin: 20px;
+}
+
+.margen-25 {
+  margin: 25px;
+}
+
+.margen-30 {
+  margin: 30px;
 }
 
 /*# sourceMappingURL=estilos.css.map */
